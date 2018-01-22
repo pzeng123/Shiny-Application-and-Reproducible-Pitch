@@ -1,0 +1,40 @@
+---
+title: "Vehicle MPG Prediction Based on mtcars"
+author: "Peng"
+date: "January 21, 2018"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+This presentation and the application was build as the project homework for the course Developing Data Products.
+
+The Shiny application developed is available at:  https://pzeng123.shinyapps.io/shiny-application-and-reproducible-pitch/
+
+The source codes of ui.R and server.R are available on the GitHub repo: https://github.com/pzeng123/Shiny-Application-and-Reproducible-Pitch
+
+## Data
+
+ `mtcars` dataset from datasets library is used.
+ 
+```{r echo = TRUE}
+summary(mtcars)
+```
+
+## Model
+
+`lm` is used to fit a multivariable regression; `mpg` as outcome; `am`, `cyl`, `hp`, and `wt` as predictors:
+
+
+```{r cars, echo = TRUE}
+lm(formula = mpg ~ am + cyl + hp + wt, data = mtcars)
+```
+
+## Results
+
+Users are able to predict their vehicles' MPG by selecting the transmission type, weight, horse power, and number of cylinders.
+
